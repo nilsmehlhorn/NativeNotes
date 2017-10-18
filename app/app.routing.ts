@@ -2,11 +2,11 @@ import { NgModule } from "@angular/core";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { Routes } from "@angular/router";
 
-import { HelloComponent } from "./hello/hello.component";
+import { NotesComponent } from "./note/notes.component";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/hello", pathMatch: "full" },
-    { path: "hello", component: HelloComponent }
+    { path: "", redirectTo: "/notes", pathMatch: "full" },
+    { path: "notes", component: NotesComponent }
 ];
 
 @NgModule({
