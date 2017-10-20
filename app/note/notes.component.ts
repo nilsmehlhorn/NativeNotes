@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import * as Dialogs from "ui/dialogs";
 
 import { Note } from "./note.model";
 
@@ -20,5 +21,22 @@ export class NotesComponent {
             new Note("NativeScript ausprobieren", "Vielleicht erstmal im NativeScript Playground"),
             new Note("Geschenk für Mutti", "Dieses Jahr früher Gedanken machen!")
         )
-    } 
+    }
+
+    public addNote() {
+        let options = {
+            title: "Titel eingeben",
+            inputType: Dialogs.inputType.text,
+            okButtonText: "Erstellen",
+            cancelButtonText: "Abbrechen"
+        }
+
+        Dialogs.prompt(options).then((promptResult: Dialogs.PromptResult) => {
+            if (!promptResult.result) return;
+            let title = promptResult.text.trim();
+            if (title.length > 0) {
+                this.notes.push(new Note(title, ""))
+            }
+        })
+    }
  }
