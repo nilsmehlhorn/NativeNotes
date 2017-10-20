@@ -4,6 +4,7 @@ import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 
 import { NotesComponent } from "./note/notes.component";
+import { NoteService } from "./note/note.service";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -24,6 +25,7 @@ import { NotesComponent } from "./note/notes.component";
         NotesComponent
     ],
     providers: [
+        NoteService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

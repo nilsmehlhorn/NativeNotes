@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import * as Dialogs from "ui/dialogs";
 
 import { Note } from "./note.model";
+import { NoteService } from "./note.service";
 
 @Component({
     moduleId: module.id,
@@ -14,13 +15,8 @@ export class NotesComponent {
 
     public notes:Array<Note> = [];
 
-    constructor() {
-        this.notes.push(
-            new Note("Themen für Meeting", "Im Meeting am Montag auf jeden Fall die festgelegten Themen ansprechen!"),
-            new Note("Urlaubsziele", "Entpannen am Strand, in die Berge oder doch lieber Backpacking?"),
-            new Note("NativeScript ausprobieren", "Vielleicht erstmal im NativeScript Playground"),
-            new Note("Geschenk für Mutti", "Dieses Jahr früher Gedanken machen!")
-        )
+    constructor(private noteService:NoteService) {
+        this.notes = noteService.allNotes();
     }
 
     public addNote() {
@@ -35,7 +31,7 @@ export class NotesComponent {
             if (!promptResult.result) return;
             let title = promptResult.text.trim();
             if (title.length > 0) {
-                this.notes.push(new Note(title, ""))
+                this.noteService.createNote(title, "");
             }
         })
     }
