@@ -1,5 +1,6 @@
-<ActionBar title="Notizen">
-    <ActionItem text="Neu" (tap)="addNote()" android.systemIcon="ic_menu_add" ios.systemIcon="4"></ActionItem>
+<ActionBar class="action-bar" title="Notizen">
+    <ActionItem text="Neue Notiz" (tap)="addNote()" icon="res://ic_add" *ngIf="isAndroid"></ActionItem>
+    <ActionItem text="Neue Notiz" (tap)="addNote()" ios.systemIcon="4" *ngIf="isIOS"></ActionItem>
 </ActionBar>
 <ListView [items]="notes" class="list-group">
     <ng-template let-note="item">

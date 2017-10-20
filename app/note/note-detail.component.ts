@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import * as imagepicker from "nativescript-imagepicker";
+import { RouterExtensions } from "nativescript-angular/router";
+import { isAndroid, isIOS } from "platform";
 
 import { Note } from "./note.model";
 import { NoteService } from "./note.service";
@@ -13,10 +15,13 @@ import { NoteService } from "./note.service";
 
 export class NoteDetailComponent implements OnInit {
 
+    public isAndroid: boolean = isAndroid;
+    public isIOS: boolean = isIOS;
+
     public note: Note;
 
     constructor(private activatedRoute: ActivatedRoute,
-        private noteService: NoteService) { }
+        private noteService: NoteService, private routerExtensions: RouterExtensions) { }
 
     ngOnInit() {
         const noteId = this.activatedRoute.snapshot.params["id"];
@@ -33,5 +38,9 @@ export class NoteDetailComponent implements OnInit {
                     this.note.imageSource = selection[0].fileUri;
                 }
             });
+    }
+
+    public goBack() {
+        this.routerExtensions.backToPreviousPage();
     }
 }

@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import * as Dialogs from "ui/dialogs";
+import { isAndroid, isIOS } from "platform";
 
 import { Note } from "./note.model";
 import { NoteService } from "./note.service";
@@ -13,9 +14,12 @@ import { NoteService } from "./note.service";
 
 export class NotesComponent {
 
-    public notes:Array<Note> = [];
+    public isAndroid: boolean = isAndroid;
+    public isIOS: boolean = isIOS;
 
-    constructor(private noteService:NoteService) {
+    public notes: Array<Note> = [];
+
+    constructor(private noteService: NoteService) {
         this.notes = noteService.allNotes();
     }
 
@@ -35,4 +39,4 @@ export class NotesComponent {
             }
         })
     }
- }
+}

@@ -1,4 +1,7 @@
-<ActionBar class="action-bar" [title]="note.title"></ActionBar>
+<ActionBar class="action-bar" [title]="note.title">
+  <NavigationButton text="Zurück" icon="res://ic_arrow_back" *ngIf="isAndroid" (tap)="goBack()"></NavigationButton>
+  <NavigationButton text="Zurück" *ngIf="isIOS" (tap)="goBack()"></NavigationButton>
+</ActionBar>
 <StackLayout>
     <Image [src]="note.imageSource"></Image>
     <TextView hint="Beschreibung eingeben..." [(ngModel)]="note.content" class="input" textWrap="true"></TextView>
