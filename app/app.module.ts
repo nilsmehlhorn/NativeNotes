@@ -4,10 +4,10 @@ import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 
 import { NotesComponent } from "./note/notes.component";
+import { NoteDetailComponent } from "./note/note-detail.component";
 import { NoteService } from "./note/note.service";
 
-// Uncomment and add to NgModule imports if you need to use two-way binding
-// import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 // Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
 // import { NativeScriptHttpModule } from "nativescript-angular/http";
@@ -17,12 +17,14 @@ import { NoteService } from "./note/note.service";
         AppComponent
     ],
     imports: [
-        NativeScriptModule,
-        AppRoutingModule
+        NativeScriptFormsModule,
+        AppRoutingModule,
+        NativeScriptModule
     ],
     declarations: [
         AppComponent,
-        NotesComponent
+        NotesComponent,
+        NoteDetailComponent
     ],
     providers: [
         NoteService

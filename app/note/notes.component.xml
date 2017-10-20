@@ -3,7 +3,7 @@
 </ActionBar>
 <ListView [items]="notes" class="list-group">
     <ng-template let-note="item">
-        <StackLayout class="list-group-item">
+        <StackLayout class="list-group-item" [nsRouterLink]="['/notes', note.id]">
             <Label [text]="note.title" class="note-title"></Label>
             <Label [text]="note.content"></Label>
         </StackLayout>

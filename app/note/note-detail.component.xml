@@ -1,0 +1,4 @@
+<ActionBar [title]="note.title"></ActionBar>
+<StackLayout>    
+    <TextView hint="Beschreibung eingeben..." [(ngModel)]="note.content" class="input" textWrap="true"></TextView>
+</StackLayout>
