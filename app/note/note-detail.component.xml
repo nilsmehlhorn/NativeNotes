@@ -1,4 +1,6 @@
-<ActionBar [title]="note.title"></ActionBar>
-<StackLayout>    
+<ActionBar class="action-bar" [title]="note.title"></ActionBar>
+<StackLayout>
+    <Image [src]="note.imageSource"></Image>
     <TextView hint="Beschreibung eingeben..." [(ngModel)]="note.content" class="input" textWrap="true"></TextView>
+    <Button class="btn btn-primary input" text="Bild auswählen" (tap)="addImage()"></Button>
 </StackLayout>
