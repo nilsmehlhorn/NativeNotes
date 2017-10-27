@@ -6,4 +6,6 @@ import { Component } from "@angular/core";
     templateUrl: "hello.component.xml"
 })
 
-export class HelloComponent { }
+export class HelloComponent { 
+    public helloText:string = "Hallo Welt!"
+}
