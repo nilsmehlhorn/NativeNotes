@@ -12,31 +12,26 @@ import { Note } from "./note.model";
 
 export class NotesComponent {
 
-    public notes:Array<Note> = [];
-
-    constructor() {
-        this.notes.push(
-            new Note("Themen für Meeting", "Im Meeting am Montag auf jeden Fall die festgelegten Themen ansprechen!"),
-            new Note("Urlaubsziele", "Entpannen am Strand, in die Berge oder doch lieber Backpacking?"),
-            new Note("NativeScript ausprobieren", "Vielleicht erstmal im NativeScript Playground"),
-            new Note("Geschenk für Mutti", "Dieses Jahr früher Gedanken machen!")
-        )
-    }
+    public notes: Array<Note> = [
+        new Note("Themen für Meeting", "Im Meeting am Montag auf jeden Fall die festgelegten Themen ansprechen!"),
+        new Note("Urlaubsziele", "Entspannen am Strand, in die Berge oder doch lieber Backpacking?"),
+        new Note("NativeScript ausprobieren", "Vielleicht erstmal im NativeScript Playground"),
+        new Note("Geschenk für Mutti", "Dieses Jahr früher Gedanken machen!")
+    ];
 
     public addNote() {
-        let options = {
+        const options = {
             title: "Titel eingeben",
             inputType: Dialogs.inputType.text,
             okButtonText: "Erstellen",
             cancelButtonText: "Abbrechen"
         }
-
         Dialogs.prompt(options).then((promptResult: Dialogs.PromptResult) => {
             if (!promptResult.result) return;
-            let title = promptResult.text.trim();
+            const title = promptResult.text.trim();
             if (title.length > 0) {
                 this.notes.push(new Note(title, ""))
             }
         })
     }
- }
+}
