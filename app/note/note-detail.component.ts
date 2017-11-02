@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { Button } from "ui/Button"
 
 import { Note } from "./note.model";
 import { NoteService } from "./note.service";
@@ -19,6 +20,6 @@ export class NoteDetailComponent implements OnInit {
 
     ngOnInit() {
         const noteId = this.activatedRoute.snapshot.params["id"];
-        this.note = this.noteService.oneNote(noteId);
+        this.note = this.noteService.getOne(noteId);
     }
 }

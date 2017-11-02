@@ -11,16 +11,16 @@ export class NoteService {
 
     constructor() {
         this.createNote("Themen für Meeting", "Im Meeting am Montag auf jeden Fall die festgelegten Themen ansprechen!")
-        this.createNote("Urlaubsziele", "Entpannen am Strand, in die Berge oder doch lieber Backpacking?")
+        this.createNote("Urlaubsziele", "Entspannen am Strand, in die Berge oder doch lieber Backpacking?")
         this.createNote("NativeScript ausprobieren", "Vielleicht erstmal im NativeScript Playground")
         this.createNote("Geschenk für Mutti", "Dieses Jahr früher Gedanken machen!")
     }
 
-    public allNotes() {
+    public getAll() {
         return this.notes;
     }
 
-    public oneNote(id: number) {
+    public getOne(id: number) {
         return this.notes.find(note => note.id == id);
     }
 

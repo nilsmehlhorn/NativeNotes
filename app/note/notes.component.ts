@@ -16,7 +16,7 @@ export class NotesComponent {
     public notes:Array<Note> = [];
 
     constructor(private noteService:NoteService) {
-        this.notes = noteService.allNotes();
+        this.notes = noteService.getAll();
     }
 
     public addNote() {
