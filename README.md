@@ -8,7 +8,11 @@ The eventual application implements the following features:
 * master-detail routing from the list of notes to a specific note
 * ability to attach an image to a specific note via NativeScript imagepicker
 
+## User Interface on Android 
 <img src="https://nilsmehlhorn.github.io/NativeNotes/master.png?raw=true" alt="master-view of applications" width="320px" hspace="20"/><img src="https://nilsmehlhorn.github.io/NativeNotes/detail.png?raw=true" alt="detail-view of applications" width="320px"/>
+
+## User Interface on iOS
+<img src="https://nilsmehlhorn.github.io/NativeNotes/master_ios.png?raw=true" alt="master-view of applications" width="320px" hspace="20"/><img src="https://nilsmehlhorn.github.io/NativeNotes/detail_ios.png?raw=true" alt="detail-view of applications" width="320px"/>
 
 
 
